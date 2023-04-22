@@ -20,6 +20,7 @@ typedef struct lista
 Lista *criar();
 void limpar(Lista *l);
 void mostrar(Lista *l);
+int tamanho (Lista *l);
 int listaVazia (Lista*l);
 
 //insercao
