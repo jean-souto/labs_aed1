@@ -114,6 +114,8 @@ int main ()
     printf ("\nConcatenacao:\n");
     mostrar (concatena);
 
+    printf ("\nO tamanho da lista um eh %d, da lista dois eh %d e da lista tres eh %d.\n", tamanho(alunos), tamanho(alunos2), tamanho(concatena));
+
     printf ("\nA maior nota: \n");
     maiorNota(concatena, &parametro);
     printf ("{%d, %s, %.2f}\n", parametro.mat, parametro.nome, parametro.n1);
