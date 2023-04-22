@@ -34,6 +34,20 @@ void mostrar(Lista *l)
     }
 }
 
+int tamanho (Lista *l)
+{
+    No *aux = l->inicio;
+    int tam = 0;
+
+    while (aux != NULL)
+    {
+        tam++;
+        aux = aux->prox;
+    }
+
+    return tam;
+}
+
 int listaVazia (Lista*l) 
 {
     if (l == NULL) return 2;
@@ -167,13 +181,11 @@ int removerN (Lista *l, int n)
     if (l == NULL) return 3;
     if (listaVazia(l) == 0) return 2;
 
-    No *noPrin = l->inicio;
     int pos = 0;
 
-    while (noPrin != NULL && pos != n)
+    while (l->inicio != NULL && pos != n)
     {
         removerInicio(l);
-        noPrin = noPrin->prox;
         pos++;
     }
 
@@ -237,11 +249,13 @@ int contemItem (Lista *l, int Item)
 
 int concatenar (Lista *l1, Lista *l2, Lista *l3)
 {
+    if (l1 == NULL || l2 == NULL) { l3 = NULL; return 3; }
+
     No *aux = l1->inicio;
 
     while (aux != NULL)
     {
-        inserirInicio(l3, aux->valor);
+        inserirFim(l3, aux->valor);
         aux = aux->prox;
     }
 
@@ -249,7 +263,7 @@ int concatenar (Lista *l1, Lista *l2, Lista *l3)
 
     while (aux != NULL)
     {
-        inserirInicio(l3, aux->valor);
+        inserirFim(l3, aux->valor);
         aux = aux->prox;
     }
 
