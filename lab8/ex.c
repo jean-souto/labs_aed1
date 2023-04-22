@@ -1,13 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <Windows.h>
 #include "listacircular.h"
 
 int main ()
 {
     Lista *l1, *l2, *l3, *notasmaior, *notasmenor;
-    int i;
     Aluno item;
+
+    printf ("Entre funcoes basta aguardar 1s e apertar enter!\n\n");
 
     l1 = criar();
 
@@ -35,7 +37,8 @@ int main ()
 
     mostrar (l1);
 
-    system("pause");
+    Sleep(1000);
+    getchar();
 
     printf ("\nInserindo no final: \n");
 
@@ -53,7 +56,8 @@ int main ()
 
     mostrar (l1);
 
-    system("pause");
+    Sleep(1000);
+    getchar();
 
     notasmaior = criar();
     notasmenor = criar();
@@ -63,7 +67,8 @@ int main ()
     printf ("\nMaiores: "); mostrar (notasmaior); 
     printf ("\nMenores: "); mostrar (notasmenor);
 
-    system("pause");
+    Sleep(1000);
+    getchar();
 
     printf ("\nRemovendo inicio: \n");
     removerInicio (l1);
@@ -73,7 +78,8 @@ int main ()
     removerFim(l1);
     mostrar(l1);
 
-    system("pause");
+    Sleep(1000);
+    getchar();
 
     printf ("\nBuscando item 123: \n");
     if ((buscarItem (l1, 123, &item)) == 0) 
@@ -99,7 +105,8 @@ int main ()
 
     printf ("\nExistem %d elementos com a matricula 789!\n", contaElementos(l1, 789));
 
-    system("pause");
+    Sleep(1000);
+    getchar();
 
     printf ("\nRemovendo posicao 2:\n");
     mostrar(l1);
@@ -110,7 +117,8 @@ int main ()
     removerMeio(l1);
     mostrar(l1);
 
-    system("pause");
+    Sleep(1000);
+    getchar();
 
     printf ("\n**Realizando insercoes na lista 1 para testar outros recursos**\n");
 
@@ -144,7 +152,8 @@ int main ()
     removerItemUnico (l1, 789);
     mostrar(l1);
 
-    system("pause");
+    Sleep(1000);
+    getchar();
 
     l2 = criar();
     l3 = criar();
@@ -172,13 +181,15 @@ int main ()
     inserirFim (l2, item);
     mostrar(l2);
 
-    system ("pause");
+    Sleep(1000);
+    getchar();
 
     printf ("\nInterseccao de 1 e 2: \n");
     interseccao (l1, l2, l3);
     mostrar(l3);
 
-    system("pause");
+    Sleep(1000);
+    getchar();
 
     printf ("\nInserir fim sem repetir: \n");
 
@@ -194,7 +205,8 @@ int main ()
     if ((inserirFimSemRepetir (l2, item)) != 0) { printf ("ERRO!\n"); } else { printf ("Sucesso!\n");}
     mostrar(l2);
 
-    system("pause");
+    Sleep(1000);
+    getchar();
 
     printf ("\nInserindo e retirando os Arthurs da lista 1: \n");
     item.mat = 037;
@@ -211,6 +223,10 @@ int main ()
 
     printf ("\nFim!!!\n");
 
+    limpar(l2);
+    limpar(l3);
+    limpar(notasmaior);
+    limpar(notasmenor);
     free(l1);
     free(l2);
     free(l3);
