@@ -92,7 +92,7 @@ int comparar (Pilha *p1, Pilha *p2)
     aux2 = criar();
 
     int i = 0, a, b;
-    int tam = tamanho(p1);
+    //int tam = tamanho(p1);
 
     while(tamanho(p1) != 0)
     {
